@@ -7,9 +7,9 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: "1"
+  version: "1.0.0"
 servers:
-- url: https://virtserver.swaggerhub.com/UEX-IST-G1/GestionAlarmas/1
+- url: https://virtserver.swaggerhub.com/UEX-IST-G1/GestionAlarmas/v1.0.0
   description: SwaggerHub API Auto Mocking
 tags:
 - name: principal
