@@ -39,7 +39,7 @@ components:
   schemas:
     DatosTodosSensores:
       required:
-      - datoPresion
+      - datosPresion
       - datosFrecuencia
       - datosOxigeno
       - datosPosicion
@@ -51,16 +51,19 @@ components:
         idUsuario:
           type: number
           example: 1
-        datoFrecuencia:
+        datosTemperatura:
+          type: number
+          example: 36.5
+        datosFrecuencia:
           type: number
           example: 75
-        datoOxigeno:
+        datosOxigeno:
           type: number
           example: 98
-        datoPosicion:
+        datosPosicion:
           type: number
           example: 0
-        datoPresion:
+        datosPresion:
           type: number
           example: 2000
         tiempo:
