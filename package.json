@@ -1,6 +1,6 @@
 {
   "name": "gestionalarmas",
-  "version": "1",
+  "version": "1.0.0",
   "description": "Gestión de Alarmas",
   "main": "index.js",
   "scripts": {
