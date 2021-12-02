@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: GestionAlarmas
+  description: Gestión de Alarmas
+  contact:
+    email: mjimeneznso@alumnos.unex.es
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: "1.0.0"
+servers:
+- url: https://virtserver.swaggerhub.com/UEX-IST-G1/GestionAlarmas/v1.0.0
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: principal
+  description: principal
+paths:
+  /procesamiento:
+    post:
+      tags:
+      - principal
+      summary: Añade el procesamiento de todos los datos de los sensores para generar
+        una alarma determinada.
+      description: Añade una alarma al sistema dependiendo de los parámetros
+      operationId: addAlarma
+      requestBody:
+        description: Datos de todos los sensores a insertar
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatosTodosSensores'
+      responses:
+        "200":
+          description: Datos de todos los sensores creados con éxito
+        "400":
+          description: "entrada incorrecta, object incorrecto"
+      x-swagger-router-controller: Principal
+components:
+  schemas:
+    DatosTodosSensores:
+      required:
+      - datosPresion
+      - datosFrecuencia
+      - datosOxigeno
+      - datosPosicion
+      - datosTemperatura
+      - idUsuario
+      - tiempo
+      type: object
+      properties:
+        idUsuario:
+          type: number
+          example: 1
+        datosTemperatura:
+          type: number
+          example: 36.5
+        datosFrecuencia:
+          type: number
+          example: 75
+        datosOxigeno:
+          type: number
+          example: 98
+        datosPosicion:
+          type: number
+          example: 0
+        datosPresion:
+          type: number
+          example: 2000
+        tiempo:
+          type: string
+          example: 25-04-2021 22:10:36
+      description: Registro con todos los datos de los sensores
+  responses:
+    "404NotFound":
+      description: Not found response
+      content:
+        text/plain:
+          schema:
+            title: Endpoint not found
+            type: string
+            example: Not found
